@@ -331,3 +331,16 @@ projectsCarousel.addEventListener(
 
 
 }
+
+/* =========================================
+SKILLS STAGGER ANIMATION
+========================================= */
+
+const skillCards =
+document.querySelectorAll('.skills-card');
+
+skillCards.forEach((card, index) => {
+card.style.transitionDelay =
+    `${index * 120}ms`;
+
+});

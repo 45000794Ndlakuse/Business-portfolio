@@ -988,59 +988,286 @@ padding-left: 1.2rem;
 }
 
 /* =========================================
-SKILLS
+MODERN SKILLS SECTION
+========================================= */
+
+.skills {
+background:
+radial-gradient(
+circle at 20% 20%,
+rgba(62, 146, 204, 0.08),
+transparent 30%
+),
+var(--bg-secondary);
+}
+
+/* =========================================
+SKILLS GRID
 ========================================= */
 
 .skills-grid {
 display: grid;
 
 grid-template-columns:
-repeat(auto-fit, minmax(240px, 1fr));
+repeat(2, minmax(0, 1fr));
 
 gap: 1.5rem;
 
-max-width: 1250px;
+max-width: 1150px;
 
 margin: 0 auto;
 }
 
+/* =========================================
+SKILL CARD
+========================================= */
+
 .skills-card {
+position: relative;
+
 padding: 2rem;
 
-border-radius: 18px;
+min-height: 260px;
+
+border-radius: 20px;
+
+overflow: hidden;
 
 background:
 linear-gradient(
 145deg,
-rgba(21, 42, 66, 0.9),
-rgba(12, 25, 42, 0.85)
+rgba(20, 39, 61, 0.95),
+rgba(10, 22, 37, 0.9)
 );
 
 border: 1px solid var(--border);
 
 transition:
-transform 0.35s ease,
-box-shadow 0.35s ease,
-border-color 0.35s ease;
+transform 0.4s ease,
+box-shadow 0.4s ease,
+border-color 0.4s ease;
+}
+
+/* Decorative glow */
+
+.skills-card::before {
+content: "";
+
+position: absolute;
+
+width: 220px;
+height: 220px;
+
+top: -120px;
+right: -100px;
+
+border-radius: 50%;
+
+background:
+radial-gradient(
+circle,
+rgba(62, 146, 204, 0.16),
+transparent 70%
+);
+
+transition:
+transform 0.5s ease;
 }
 
 .skills-card:hover {
-transform: translateY(-8px);
+transform: translateY(-10px);
 
-border-color: rgba(104, 181, 232, 0.55);
+border-color:
+rgba(104, 181, 232, 0.55);
 
-box-shadow: var(--shadow);
+box-shadow:
+0 25px 55px rgba(0, 0, 0, 0.4);
 }
 
-.skills-card h3 {
+.skills-card:hover::before {
+transform: scale(1.4);
+}
+
+/* =========================================
+SKILL CARD HEADER
+========================================= */
+
+.skill-card-header {
+display: flex;
+
+align-items: center;
+
+gap: 1rem;
+
+position: relative;
+
+z-index: 2;
+
+margin-bottom: 2rem;
+}
+
+/* =========================================
+SKILL ICON
+========================================= */
+
+.skill-icon {
+width: 52px;
+height: 52px;
+
+display: flex;
+
+align-items: center;
+justify-content: center;
+
+border-radius: 15px;
+
 color: var(--primary-light);
 
-margin-bottom: 1rem;
+background:
+rgba(62, 146, 204, 0.12);
+
+border:
+1px solid rgba(62, 146, 204, 0.2);
+
+font-size: 1.4rem;
+
+transition:
+transform 0.35s ease,
+background 0.35s ease;
 }
 
-.skills-card p {
-color: var(--text-secondary);
+.skills-card:hover
+.skill-icon {
+transform: rotate(-8deg) scale(1.08);
+
+background:
+rgba(62, 146, 204, 0.22);
 }
+
+/* =========================================
+SKILL NUMBER
+========================================= */
+
+.skill-number {
+display: block;
+
+margin-bottom: 0.2rem;
+
+color: var(--primary);
+
+font-size: 0.7rem;
+
+font-weight: 800;
+
+letter-spacing: 2px;
+}
+
+/* =========================================
+SKILL TITLE
+========================================= */
+
+.skills-card h3 {
+margin: 0;
+
+color: var(--text-primary);
+
+font-size: 1.3rem;
+}
+
+/* =========================================
+SKILL TAGS
+========================================= */
+
+.skill-tags {
+position: relative;
+
+z-index: 2;
+
+display: flex;
+
+flex-wrap: wrap;
+
+gap: 0.65rem;
+}
+
+.skill-tags span {
+display: inline-flex;
+
+align-items: center;
+
+padding: 0.5rem 0.85rem;
+
+border-radius: 50px;
+
+color: var(--text-secondary);
+
+background:
+rgba(255, 255, 255, 0.035);
+
+border:
+1px solid rgba(255, 255, 255, 0.08);
+
+font-size: 0.82rem;
+
+transition:
+transform 0.3s ease,
+color 0.3s ease,
+background 0.3s ease,
+border-color 0.3s ease;
+}
+
+.skill-tags span:hover {
+transform: translateY(-3px);
+
+color: var(--primary-light);
+
+background:
+rgba(62, 146, 204, 0.14);
+
+border-color:
+rgba(104, 181, 232, 0.45);
+}
+
+/* =========================================
+MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 850px) {
+
+.skills-grid {
+grid-template-columns: 1fr;
+}
+
+}
+
+@media (max-width: 480px) {
+
+.skills-card {
+padding: 1.5rem;
+
+
+min-height: auto;
+
+
+}
+
+.skill-card-header {
+margin-bottom: 1.5rem;
+}
+
+.skill-tags span {
+font-size: 0.75rem;
+
+
+padding:
+  0.45rem
+  0.7rem;
+
+
+}
+
+}
+
 
 /* =========================================
 PROJECTS
