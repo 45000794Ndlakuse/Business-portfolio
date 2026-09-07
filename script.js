@@ -123,7 +123,7 @@ SCROLL REVEAL ANIMATION
 ========================================= */
 
 const revealElements = document.querySelectorAll(
-'.education-card, .skills-card, .projects-card, #contact'
+'.education-timeline-item, .skills-card, .projects-card, #contact'
 );
 
 revealElements.forEach(element => {
